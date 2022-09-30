@@ -10,7 +10,7 @@ Secrets must be tagged with `${var.tag_name}=${var.environment}` in order to be 
 
 ```hcl
 module "runtime_connector" {
-  source  = "symopsio/runtime-connector/sym"
+  source  = "symopsio/runtime-connector/aws"
   version = ">= 1.0.0"
 
   addons      = [ "aws/secretsmgr" ]
@@ -22,7 +22,7 @@ Optionally override the default tag_name and value with `addon_params`:
 
 ```hcl
 module "runtime_connector" {
-  source  = "symopsio/runtime-connector/sym"
+  source  = "symopsio/runtime-connector/aws"
   version = ">= 1.0.0"
 
   addons      = [ "aws/secretsmgr" ]
