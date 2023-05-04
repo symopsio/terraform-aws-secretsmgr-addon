@@ -1,5 +1,5 @@
 variable "environment" {
-  description = "An environment qualifier for the resources this module creates, to support a Terraform SDLC. The environment value is also the tag value that secrets must be tagged with to be accessible by this addon."
+  description = "The unique name of the environment in which you are deploying this AWS IAM Policy (e.g. staging, or prod). The environment value is also the tag value that secrets must be tagged with to be accessible by this addon."
   type        = string
 }
 
@@ -10,8 +10,13 @@ variable "tag_name" {
 }
 
 variable "tags" {
-  description = "Additional tags to apply to resources"
+  description = "Additional tags to apply to resources."
   type        = map(string)
   default     = {}
 }
 
+variable "iam_role_name" {
+  description = "If specified, the generated AWS IAM Policy will be attached to the AWS IAM Role identified by this value."
+  type        = string
+  default     = ""
+}
