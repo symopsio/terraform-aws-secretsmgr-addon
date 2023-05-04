@@ -12,6 +12,7 @@ module "secrets_manager_access" {
   version = ">= 1.0.0"
 
   environment = "prod"
+  iam_role_name = module.runtime_connector.sym_runtime_connector_role.name
 }
 ```
 
